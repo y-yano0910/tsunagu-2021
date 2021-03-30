@@ -1,0 +1,42 @@
+.header {
+  height: 100px;
+  background-color: rgb(56, 218, 105);
+  padding: 20px 0;
+
+}
+.inner {
+  width: 1024px;
+  margin: 0 auto;
+}
+.nav {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.logo {
+  color: #0a0a0a;
+  font-size: 50px;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+.nav__right{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn__pro{
+  padding: 0 20px;
+}
+
+.nav__btn{
+  display: inline-block;
+  padding: 0.4em 1.6em;
+  font-size: 0.8em;
+  color: white;
+  text-decoration: none;
+  user-select: none;
+  border: 1px #022941 solid;
+  background-color: black;
+  border-radius: 3px;
+  transition: 0.4s ease;
+}
