@@ -7,7 +7,10 @@ class Producer < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :category
   belongs_to :main_product
-  has_many :customers
+  has_many :followings
+  has_many :customers, through: :followings
+  has_one :address
+  accepts_nested_attributes_for :address
 
   with_options presence: true do
     validates :farm_name
