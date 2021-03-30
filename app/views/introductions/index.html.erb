@@ -1,0 +1,24 @@
+<%= render "shared/header" %>
+<div class="contents">
+  <section class="upper-section">
+    <div class="inners">
+      <h1 class="log-name">LOG IN</h1>
+      <h2 class="log-name">ログイン</h2>
+    </div>
+  </section>
+  <section class="login-section">
+    <div class="inners">
+      <ul class="login-switch">
+        <li class="producers">
+          <%= link_to image_tag("producer_icon.png", class: :icon), "#" %>
+          <h4 class="login_guide">生産者の新規登録はこちら</h4>
+        </li>
+        <li class="customers">
+          <%= link_to image_tag("customer_icon.png", class: :icon), "#" %>
+          <h4 class="login_guide">生産者の新規登録はこちら</h4>
+        </li>
+      </ul>
+    </div>
+  </section>
+</div>
+<%= render "shared/footer" %>
