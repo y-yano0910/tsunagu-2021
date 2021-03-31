@@ -1,0 +1,85 @@
+<%= render "shared/header" %>
+<div class="main">
+  <div class="inner">
+    <div class="form__wrapper">
+      <h2 class="page-heading">生産者の新規登録</h2>
+
+      <%= form_with model: @producer, url: producer_registration_path, local: true do |f| %>
+        <div class="field">
+          <%= f.label :email, "メールアドレス" %><br />
+          <%= f.email_field :email, id:"producer_email", autofocus: true, autocomplete: "email" %>
+        </div>
+
+        <div class="field">
+          <%= f.label :password, "パスワード（6文字以上）" %><br />
+          <%= f.password_field :password, id:"producer_password", autocomplete: "new-password" %>
+        </div>
+
+        <div class="field">
+          <%= f.label :password_confirmation, "パスワード再入力" %><br />
+          <%= f.password_field :password_confirmation, id:"producer_password_confirmation", autocomplete: "new-password" %>
+        </div>
+
+        <div class="field">
+          <%= f.label :farm_name, "生産者の名前(農園名)" %><br />
+          <%= f.text_field :farm_name, id:"producer_farm_name" %>
+        </div>
+
+        <div class="field">
+          <%= f.label :category, "カテゴリー" %>
+          <div></div>
+          <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"select-box"}) %>
+        </div>
+
+        <div class="field">
+          <%= f.label :main_product, "主要生産物" %>
+          <div></div>
+          <%= f.collection_select(:main_product_id, MainProduct.all, :id, :name, {}, {class:"select-box"}) %>
+        </div>
+
+        <div class="field">
+          <%= f.label :farm_characteristic, "生産農園のご紹介文" %><br />
+          <%= f.text_area :farm_characteristic, class: :form__text, id:"user_occupation" %>
+        </div>
+
+        <%= f.fields_for :address do |address| %>
+          <div class="field">
+            <%= address.label :postal_code, "郵便番号" %><br />
+            <%= address.text_field :postal_code, id:"producer_postal_code" %>
+          </div>
+
+          <div class="field">
+            <%= address.label :prefecture, "都道府県" %>
+            <div></div>
+            <%= address.collection_select(:prefecture_id, Prefecture.all, :id, :name, {}, {class:"select-box"}) %>
+          </div>
+
+          <div class="field">
+            <%= address.label :municipality, "市区町村" %><br />
+            <%= address.text_field :municipality, id:"producer_municipality" %>
+          </div>
+
+          <div class="field">
+            <%= address.label :house_number, "町名・番地" %><br />
+            <%= address.text_field :house_number, id:"producer_houce_number" %>
+          </div>
+
+          <div class="field">
+            <%= address.label :building_name, "建物名" %><br />
+            <%= address.text_field :building_name, id:"producer_building_name" %>
+          </div>
+
+          <div class="field">
+            <%= address.label :phone_number, "電話番号" %><br />
+            <%= address.text_field :phone_number, id:"producer_phone_number" %>
+          </div>
+        <% end %>
+
+        <div class="actions">
+          <%= f.submit "新規登録", class: :form__btn  %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+<%= render "shared/footer" %>

@@ -3,19 +3,19 @@
   <section class="upper-section">
     <div class="inners">
       <h1 class="log-name">LOG IN</h1>
-      <h2 class="log-name">ログイン</h2>
+      <h3 class="log-name">ログイン</h3>
     </div>
   </section>
   <section class="login-section">
     <div class="inners">
       <ul class="login-switch">
         <li class="producers">
-          <%= link_to image_tag("producer_icon.png", class: :icon), "#" %>
+          <%= link_to image_tag("producer_icon.png", class: :icon), new_producer_registration_path %>
           <h4 class="login_guide">生産者の新規登録はこちら</h4>
         </li>
         <li class="customers">
-          <%= link_to image_tag("customer_icon.png", class: :icon), "#" %>
-          <h4 class="login_guide">生産者の新規登録はこちら</h4>
+          <%= link_to image_tag("customer_icon.png", class: :icon), new_customer_registration_path %>
+          <h4 class="login_guide">購入者の新規登録はこちら</h4>
         </li>
       </ul>
     </div>
