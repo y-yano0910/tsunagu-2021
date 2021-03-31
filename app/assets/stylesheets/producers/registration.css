@@ -9,6 +9,9 @@
 .field{
   margin: 10px 0;
 }
+.select-box{
+  padding: 10px 20px;
+}
 
 .actions{
   margin-bottom: 40px;

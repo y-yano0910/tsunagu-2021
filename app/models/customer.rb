@@ -14,9 +14,4 @@ class Customer < ApplicationRecord
    validates :customer_name
    validates :responsible_person
   end
-
-  with_options numericality: { other_than: 0 } do
-    validates :category_id
-    validates :main_product_id
-  end
 end

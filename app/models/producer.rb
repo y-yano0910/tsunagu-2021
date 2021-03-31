@@ -19,4 +19,8 @@ class Producer < ApplicationRecord
     validates :farm_characteristic
   end
 
+  with_options numericality: { other_than: 0 } do
+    validates :category_id
+    validates :main_product_id
+  end
 end

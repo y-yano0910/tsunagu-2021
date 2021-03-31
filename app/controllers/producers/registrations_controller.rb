@@ -6,7 +6,9 @@ class Producers::RegistrationsController < Devise::RegistrationsController
 
   # GET /resource/sign_up
   def new
-    super
+    # super
+    @producer = Producer.new
+    @address = @producer.build_address
   end
 
   # POST /resource
@@ -42,7 +44,7 @@ class Producers::RegistrationsController < Devise::RegistrationsController
 
   # If you have extra params to permit, append them to the sanitizer.
   def configure_sign_up_params
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:attribute])
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:attribute, :farm_name, :category_id, :main_product_id, :farm_characteristic, address_attributes: [:postal_code, :prefecture_id, :municipality, :house_number, :building_name, :phone_number]])
   end
 
   # If you have extra params to permit, append them to the sanitizer.
