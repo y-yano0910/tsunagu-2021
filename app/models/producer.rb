@@ -11,6 +11,7 @@ class Producer < ApplicationRecord
   has_many :customers, through: :followings
   has_one :address
   accepts_nested_attributes_for :address
+  has_many :products
 
   with_options presence: true do
     validates :farm_name

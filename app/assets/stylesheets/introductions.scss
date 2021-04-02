@@ -20,6 +20,11 @@
   justify-content: center;
   align-items: center;
 }
+.intoroduction{
+  font-size: 20px;
+  text-align: center;
+  list-style: none;
+}
 
 .log-name{
   color: black;
@@ -45,18 +50,38 @@
   align-items: center;
 }
 .producers{
+  width: auto;
   background-color: rgb(241, 243, 108);
   border: 1px black solid;
-  padding: 20px;
+  padding: 40px 20px 20px;
   list-style: none;
 }
+
+.producers:hover{
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2), 0 1px 8px 0 rgba(0, 0, 0, 0.12);
+  cursor: pointer;
+}
+
 .customers{
+  // width: auto;
   background-color: rgb(243, 148, 119);
   border: 1px black solid;
-  padding: 20px;
+  padding: 40px 20px 20px;
   list-style: none;
 }
+
+.customers:hover{
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2), 0 1px 8px 0 rgba(0, 0, 0, 0.12);
+  cursor: pointer;
+}
+
 .icon{
   padding-left: 30px;
   padding-bottom: 10px;
+}
+
+.login_guide{
+  width: 200px;
+  height: 40px;
+  text-align: center;
 }

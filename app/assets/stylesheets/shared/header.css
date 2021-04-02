@@ -18,6 +18,10 @@
   font-size: 50px;
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
+.logo:hover{
+  cursor: pointer;
+  color: #615e5e;
+}
 .nav__right{
   display: flex;
   justify-content: center;
@@ -39,4 +43,9 @@
   background-color: black;
   border-radius: 3px;
   transition: 0.4s ease;
+}
+.nav__btn:hover{
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2), 0 1px 8px 0 rgba(0, 0, 0, 0.12);
+  cursor: pointer;
+  background-color: #033303;
 }

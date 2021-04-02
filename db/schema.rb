@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_30_084040) do
+ActiveRecord::Schema.define(version: 2021_04_02_004154) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -86,6 +86,18 @@ ActiveRecord::Schema.define(version: 2021_03_30_084040) do
     t.index ["reset_password_token"], name: "index_producers_on_reset_password_token", unique: true
   end
 
+  create_table "products", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name", null: false
+    t.integer "price", null: false
+    t.integer "capacity_id", null: false
+    t.integer "main_product_id", null: false
+    t.text "features", null: false
+    t.bigint "producer_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["producer_id"], name: "index_products_on_producer_id"
+  end
+
   create_table "shippings", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "postal_code", null: false
     t.integer "prefecture_id", null: false
@@ -103,5 +115,6 @@ ActiveRecord::Schema.define(version: 2021_03_30_084040) do
   add_foreign_key "addresses", "producers"
   add_foreign_key "followings", "customers"
   add_foreign_key "followings", "producers"
+  add_foreign_key "products", "producers"
   add_foreign_key "shippings", "customers"
 end

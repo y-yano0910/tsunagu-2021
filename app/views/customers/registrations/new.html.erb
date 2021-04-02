@@ -44,7 +44,6 @@
 
           <div class="field">
             <%= s.label :prefecture, "都道府県" %>
-            <div></div>
             <%= s.collection_select(:prefecture_id, Prefecture.all, :id, :name, {}, {class:"select-box"}) %>
           </div>
 

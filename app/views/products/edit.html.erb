@@ -1,0 +1,12 @@
+<%= render "shared/product_header" %>
+<div class="main">
+  <div class="inner">
+    <div class="form__wrapper">
+      <h2 class="page-heading">商品(生産物)情報の更新</h2>
+      <%= render "form" %>
+      <%= link_to '詳細ページへ', @product %> |
+      <%= link_to '戻る', products_path %>
+    </div>
+  </div>
+</div>
+<%= render "shared/footer" %>

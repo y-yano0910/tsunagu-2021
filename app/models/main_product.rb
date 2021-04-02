@@ -12,5 +12,5 @@ class MainProduct < ActiveHash::Base
  
    include ActiveHash::Associations
    has_many :producers
- 
+   has_many :products
   end

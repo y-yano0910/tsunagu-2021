@@ -5,6 +5,7 @@
       <h2 class="page-heading">購入者のログイン</h2>
 
       <%= form_with model: @customer, url: customer_session_path, local: true do |f| %>
+        <%= render 'shared/error_messages', model: f.object %>
         <div class="field">
           <%= f.label :email, "メールアドレス" %><br />
           <%= f.email_field :email, id:"customer_login_email", autofocus: true, autocomplete: "email" %>
