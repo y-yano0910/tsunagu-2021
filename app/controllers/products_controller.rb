@@ -4,7 +4,7 @@ class ProductsController < ApplicationController
   # before_action :move_to_introductions_index
 
   def index
-    @products = Product.includes(:producer).order('created_at DESC')
+    @products = Producer.product.order('created_at DESC')
   end
 
   # GET /products/1 or /products/1.json
