@@ -1,7 +1,7 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: %i[ show edit update destroy ]
   before_action :authenticate_producer!
-  before_action :move_to_introductions_index, only: [:edit, :update, :destroy]
+  before_action :move_to_producers_show, only: [:show, :edit, :update, :destroy]
 
   def new
     @product = Product.new
@@ -45,7 +45,10 @@ class ProductsController < ApplicationController
       params.require(:product).permit(:image, :name, :price, :capacity_id, :main_product_id, :features).merge(producer_id: current_producer.id)
     end
 
-    def move_to_introductions_index 
-      redirect_to root_path if @product.producer_id != current_producer.id
+    def move_to_producers_show 
+      if @product.producer == current_producer
+      else
+        redirect_to producer_path(current_producer.id)
+      end
     end
 end
