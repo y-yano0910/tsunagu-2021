@@ -1,0 +1,32 @@
+ja:
+ activerecord:
+   attributes:
+     producer:
+       farm_name: 生産者の名前(農園名)
+       category_id: カテゴリー
+       main_product_id: 主要生産物
+       farm_characteristic: 生産農園のご紹介文
+     address:
+       postal_code: 郵便番号
+       prefecture_id: 都道府県
+       municipality: 市区町村
+       house_number: 町名・番地
+       phone_number: 電話番号
+     customer:
+       company_name: 会社名
+       customer_name: 店名
+       responsible_person: 担当者名
+     shipping:
+       postal_code: 郵便番号
+       prefecture_id: 都道府県
+       municipality: 市区町村
+       house_number: 町名・番地
+       phone_number: 電話番号
+     product:
+       name: 商品(生産品)の名前
+       image: 商品(生産品)の画像
+       price: 価格
+       capacity_id: 単位価格表示
+       main_product_id: 商品(生産品)の種類
+       features: 商品(生産品)のご紹介文
+       

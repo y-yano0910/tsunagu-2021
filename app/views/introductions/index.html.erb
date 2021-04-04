@@ -1,21 +1,38 @@
 <%= render "shared/header" %>
 <div class="contents">
   <section class="upper-section">
-    <div class="inners">
-      <h1 class="log-name">LOG IN</h1>
-      <h3 class="log-name">ログイン</h3>
+    <div class="intoroductions">
+      <ul class="intoroduction">
+        <li>こだわりの食材を求める買い手のニーズ</li>
+        <li>丹精込めた生産品を知って欲しい生産者</li>
+        <li>そんな生産者と買い手のニーズを繋ぐプラットフォームです</li>
+      </ul>
+      <div class="inners">
+        <h1 class="log-name">LOG IN</h1>
+        <h3 class="log-name">ログイン</h3>
+      </div>
     </div>
   </section>
   <section class="login-section">
     <div class="inners">
       <ul class="login-switch">
         <li class="producers">
-          <%= link_to image_tag("producer_icon.png", class: :icon), new_producer_registration_path %>
-          <h4 class="login_guide">生産者の新規登録はこちら</h4>
+          <% if producer_signed_in? %>
+            <%= link_to image_tag("producer_icon.png", class: :icon), new_producer_session_path %>
+            <h4 class="login_guide"><%= current_producer.farm_name %>さんのページはこちら</h4>
+          <% else %>
+            <%= link_to image_tag("producer_icon.png", class: :icon), new_producer_registration_path %>
+            <h4 class="login_guide">生産者の新規登録はこちら</h4>
+          <% end %>
         </li>
         <li class="customers">
-          <%= link_to image_tag("customer_icon.png", class: :icon), new_customer_registration_path %>
-          <h4 class="login_guide">購入者の新規登録はこちら</h4>
+          <% if customer_signed_in? %>
+            <%= link_to image_tag("customer_icon.png", class: :icon), new_customer_session_path %>
+            <h4 class="login_guide"><%= current_customer.farm_name %>さんのページはこちら</h4>
+          <% else %>
+            <%= link_to image_tag("customer_icon.png", class: :icon), new_customer_registration_path %>
+            <h4 class="login_guide">購入者の新規登録はこちら</h4>
+          <% end %>
         </li>
       </ul>
     </div>

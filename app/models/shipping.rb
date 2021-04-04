@@ -12,5 +12,5 @@ class Shipping < ApplicationRecord
     validates :customer
   end
 
-  validates :prefecture_id, numericality: { other_than: 0 }
+  validates :prefecture_id, numericality: { other_than: 0, message: 'を選択してください' }
 end

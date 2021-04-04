@@ -12,5 +12,5 @@ class Address < ApplicationRecord
     validates :producer
   end
 
-  validates :prefecture_id, numericality: { other_than: 0 }
+  validates :prefecture_id, numericality: { other_than: 0, message: 'を選択してください' }
 end

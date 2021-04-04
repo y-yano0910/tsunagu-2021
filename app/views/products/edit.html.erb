@@ -1,0 +1,50 @@
+<%= render "shared/product_header" %>
+<div class="main">
+  <div class="inner">
+    <div class="form__wrapper">
+      <h2 class="page-heading">商品(生産物)情報の編集</h2>
+
+      <%= form_with(model: @product, local: true) do |f| %>
+        <%= render 'shared/error_messages', model: f.object %>
+
+        <div class="field">
+          <%= f.label :name, "商品(生産品)の名前" %><br />
+          <%= f.text_field :name, id:"product_name"%>
+        </div>
+
+        <div class="field">
+          <%= f.label :image, "商品(生産品)の画像" %><br />
+          <%= f.file_field :image, id:"product_image" %>
+        </div>
+
+        <div class="field">
+          <%= f.label :price, "価格設定" %><br />
+          <%= f.number_field :price, id:"product_price", placeholder:"例) 300" %>
+        </div>
+
+        <div class="field">
+          <%= f.label :capacity_id, "単位価格表示" %>
+          <%= f.collection_select(:capacity_id, Capacity.all, :id, :name, {}, {class:"select-box"}) %>
+        </div>
+
+        <div class="field">
+          <%= f.label :main_product_id, "商品(生産品)の種類" %>
+          <%= f.collection_select(:main_product_id, MainProduct.all, :id, :name, {}, {class:"select-box"}) %>
+        </div>
+
+        <div class="field">
+          <%= f.label :features, "商品(生産品)のご紹介文" %><br />
+          <%= f.text_area :features, class: :form__text, id:"product_features" %>
+        </div>
+
+        <div class="actions">
+          <%= f.submit "更新する", class: :form__btn  %>
+        </div>
+      <% end %>
+        
+      <%= link_to '詳細ページへ', @product %> |
+      <%= link_to '戻る', producer_path(current_producer.id) %>
+    </div>
+  </div>
+</div>
+<%= render "shared/footer" %>

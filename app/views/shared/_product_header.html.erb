@@ -1,0 +1,24 @@
+<header class="header">
+  <div class="inner">
+    <div class="nav">
+      <div class="nav__left">
+        <%= link_to "TSUNAGU", producer_path(current_producer.id), class: :logo %>
+      </div>
+      <div class="nav__right">
+        <p><b><%= current_producer.farm_name %></b>さんのページ</p>
+        <div class="btn__pro">
+          <%=link_to "商品一覧", producer_path(current_producer.id), class: :nav__btn %>
+        </div>
+        <div class="btn__pro">
+          <%=link_to "商品登録", new_product_path, class: :nav__btn %>
+        </div>
+        <div class="btn__pro">
+          <%=link_to "アカウント", "#", class: :nav__btn %>
+        </div>
+        <div class="btn__pro">
+          <%=link_to "ログアウト", destroy_producer_session_path, method: :delete, class: :nav__btn %>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>

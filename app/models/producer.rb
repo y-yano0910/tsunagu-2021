@@ -11,6 +11,7 @@ class Producer < ApplicationRecord
   has_many :customers, through: :followings
   has_one :address
   accepts_nested_attributes_for :address
+  has_many :products
 
   with_options presence: true do
     validates :farm_name
@@ -19,7 +20,7 @@ class Producer < ApplicationRecord
     validates :farm_characteristic
   end
 
-  with_options numericality: { other_than: 0 } do
+  with_options numericality: { other_than: 0, message: 'を選択してください' } do
     validates :category_id
     validates :main_product_id
   end

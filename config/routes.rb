@@ -12,4 +12,6 @@ Rails.application.routes.draw do
     registrations: 'producers/registrations'
   }
   root to: "introductions#index"
+  resources :producers, only: :show
+  resources :products, except: :index
 end
