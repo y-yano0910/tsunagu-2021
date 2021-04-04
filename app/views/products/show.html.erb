@@ -1,34 +1,38 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @product.name %>
-</p>
-
-<p>
-  <strong>Price:</strong>
-  <%= @product.price %>
-</p>
-
-<p>
-  <strong>Capacity:</strong>
-  <%= @product.capacity_id %>
-</p>
-
-<p>
-  <strong>Category:</strong>
-  <%= @product.main_product_id %>
-</p>
-
-<p>
-  <strong>Features:</strong>
-  <%= @product.features %>
-</p>
-
-<p>
-  <strong>Producer:</strong>
-  <%= @product.producer_id %>
-</p>
-
-<%= link_to 'Edit', edit_product_path(@product) %> |
-<%= link_to 'Back', producer_path(current_producer.id) %>
+<%= render "shared/product_header" %>
+<main class="main">
+  <div class="inner">
+    <div class="product__wrapper">
+      <p class="product__hedding">
+        <%= @product.name %>
+      </p>
+      <div class="product__manage">
+        <%= link_to "編集する", edit_product_path(@product.id), class: :product__btn %>
+        <%= link_to "削除する", product_path(@product.id), method: :delete, class: :product__btn %>
+      </div>
+      <div class="product__image">
+        <%= image_tag @product.image %>
+      </div>
+      <div class="product__body">
+        <div class="product__detail">
+          <p class="detail__title">商品の価格/単位価格表示</p>
+          <p class="detail__message">
+            <%= "#{@product.price}円" %><%= @product.capacity.name %>
+          </p>
+        </div>
+        <div class="product__detail">
+          <p class="detail__title">商品(生産品)の種類</p>
+          <p class="detail__message">
+            <%= @product.main_product.name %>
+          </p>
+        </div>
+        <div class="product__detail">
+          <p class="detail__title">商品(生産品)のご紹介文</p>
+          <p class="detail__message">
+            <%= "「#{@product.features}」" %>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+<%= render "shared/footer" %>
