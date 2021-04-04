@@ -1,0 +1,37 @@
+<%= render "shared/product_header" %>
+<div class="main">
+  <div class="inner">
+    <div class="user__wrapper">
+      <h2 class="page-heading">
+        <%= current_producer.farm_name %>さんの情報
+      </h2>
+      <table class="table">
+        <tbody>
+          <tr>
+            <th class="table__col1">生産者の名前(農園名)</th>
+            <td class="table__col2"><%= @producer.farm_name %></td>
+          </tr>
+          <tr>
+            <th class="table__col1">カテゴリー</th>
+            <td class="table__col2"><%= @producer.category.name %></td>
+          </tr> 
+          <tr>
+            <th class="table__col1">主要生産物</th>
+            <td class="table__col2"><%= @producer.main_product.name %></td>
+          </tr>
+          <tr>
+            <th class="table__col1">生産者のご紹介文</th>
+            <td class="table__col2"><%= @producer.farm_characteristic %></td>
+          </tr>
+        </tbody>
+      </table>
+      <h2 class="page-heading">
+        <%= "#{@producer.farm_name}さんの登録商品(生産品)" %>
+      </h2>
+      <div class="user__card">
+        <%= render partial: "products/product", collection: @producer.products %>
+      </div>
+    </div>
+  </div>
+</div>
+<%= render "shared/footer" %>

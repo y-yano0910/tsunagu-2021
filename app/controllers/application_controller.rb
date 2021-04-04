@@ -1,6 +1,5 @@
 class ApplicationController < ActionController::Base
   before_action :basic_auth
-
   private
 
   def basic_auth
@@ -8,11 +7,11 @@ class ApplicationController < ActionController::Base
       username == ENV["BASIC_AUTH_USER"] && password == ENV["BASIC_AUTH_PASSWORD"]
     end
   end
-
+  
   def after_sign_in_path_for(resource)
     case resource
     when Producer
-      products_path(@product.id)
+      producer_path(resource)
     end
   end
 end

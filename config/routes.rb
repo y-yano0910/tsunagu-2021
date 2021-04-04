@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  resources :products
-  
   devise_for :customers, controllers: {
     confirmations: 'customers/confirmations',
     sessions:      'customers/sessions',
@@ -14,4 +12,6 @@ Rails.application.routes.draw do
     registrations: 'producers/registrations'
   }
   root to: "introductions#index"
+  resources :producers, only: :show
+  resources :products, except: :index
 end
