@@ -5,5 +5,7 @@
     <p class="card__summary">
       <%= "#{product.price}円" %><%= "#{product.capacity.name}" %>
     </p>
+    <%= link_to 'この商品の詳細ページへ', product %> |
+    <%= link_to '削除', product_path(product.id), method: :delete %>
   </div>
 </div>
