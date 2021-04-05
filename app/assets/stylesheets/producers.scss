@@ -66,8 +66,15 @@
 .card__title:hover{
   color: rgb(136, 207, 163);
 }
+.card__name{
+  font-size: 16px;
+}
+.card__name:hover{
+  color: rgb(136, 207, 163);
+}
 .card__summary {
   font-size: 16px;
+  margin-top: 8px;
   margin-bottom: 8px;
 }
 .card__user {
