@@ -12,6 +12,8 @@ class ApplicationController < ActionController::Base
     case resource
     when Producer
       producer_path(resource)
+    when Customer
+      products_path
     end
   end
 end

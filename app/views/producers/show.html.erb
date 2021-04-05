@@ -31,6 +31,9 @@
       <div class="user__card">
         <%= render partial: "products/product", collection: @product %>
       </div>
+      <div class="paginate">
+        <%= paginate @product %>
+      </div>
     </div>
   </div>
 </div>

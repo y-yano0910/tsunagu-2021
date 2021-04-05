@@ -3,9 +3,8 @@ class ProducersController < ApplicationController
 
   def show
     @producer = Producer.find(params[:id])
-    @product = @producer.products.order('created_at DESC')
-    if @producer == current_producer
-    else
+    @product = @producer.products.page(params[:page]).per(18).order('created_at DESC')
+    unless @producer == current_producer
       redirect_to producer_path(current_producer.id)
     end
   end

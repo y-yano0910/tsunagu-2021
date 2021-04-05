@@ -1,14 +1,20 @@
-<%= render "shared/product_header" %>
+<% if current_producer %>
+  <%= render "shared/product_header" %>
+<% else %>
+  <%= render "shared/customer_header" %>
+<% end %>
 <main class="main">
   <div class="inner">
     <div class="product__wrapper">
       <p class="product__hedding">
         <%= @product.name %>
       </p>
-      <div class="product__manage">
-        <%= link_to "編集する", edit_product_path(@product.id), class: :product__btn %>
-        <%= link_to "削除する", product_path(@product.id), method: :delete, class: :product__btn %>
-      </div>
+      <% if current_producer == @product.producer %>
+        <div class="product__manage">
+          <%= link_to "編集する", edit_product_path(@product.id), class: :product__btn %>
+          <%= link_to "削除する", product_path(@product.id), method: :delete, class: :product__btn %>
+        </div>
+      <% end %>
       <div class="product__image">
         <%= image_tag @product.image %>
       </div>
