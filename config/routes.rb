@@ -12,6 +12,8 @@ Rails.application.routes.draw do
     registrations: 'producers/registrations'
   }
   root to: "introductions#index"
+  get 'products/search'
   resources :producers, only: :show
-  resources :products, except: :index
+  resources :products
+  
 end

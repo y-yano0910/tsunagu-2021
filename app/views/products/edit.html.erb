@@ -42,8 +42,8 @@
         </div>
       <% end %>
         
-      <%= link_to '詳細ページへ', @product %> |
-      <%= link_to '一覧へ戻る', producer_path(current_producer.id) %>
+      <%= link_to '詳細ページへ', @product, class: :link__btn %> |
+      <%= link_to '一覧へ戻る', producer_path(current_producer.id), class: :link__btn %>
     </div>
   </div>
 </div>

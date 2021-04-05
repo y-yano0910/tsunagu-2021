@@ -1,11 +1,21 @@
 <div class="card">
-  <%= link_to image_tag(product.image, class: :card__img ), product_path(product.id) %>
+  <%= link_to image_tag(product.image.variant(resize: '324x217'), class: :card__img ), product_path(product.id) %>
   <div class="card__body">
-    <%= link_to "#{product.name}", product_path(product.id), class: :card__title%>
+    <%= link_to "#{product.name}", product_path(product.id), class: :card__title %>
+    <% if customer_signed_in? %>
+      <%= link_to "#{product.producer.farm_name}", producer_path(product.producer_id) , class: :card__name %>
+    <% end %>
     <p class="card__summary">
       <%= "#{product.price}円" %><%= "#{product.capacity.name}" %>
     </p>
-    <%= link_to 'この商品の詳細ページへ', product %> |
-    <%= link_to '削除', product_path(product.id), method: :delete %>
+    <div class="page__btn">
+      <%= link_to 'この商品の詳細ページへ', product, class: :link__btn%>
+      <% if producer_signed_in? %>
+        <% if current_producer.id == product.producer_id %>
+          | <%= link_to "編集する", edit_product_path(product.id), class: :link__btn%>
+          | <%= link_to '削除', product_path(product.id), method: :delete, class: :link__btn %>
+        <% end %>
+      <% end %>
+    </div>
   </div>
 </div>

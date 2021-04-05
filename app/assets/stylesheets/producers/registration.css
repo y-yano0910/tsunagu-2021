@@ -40,3 +40,8 @@
 label {
   display: block;
 }
+.search__wrapper{
+}
+.search_field{
+  margin: 10px 0;
+}
