@@ -10,20 +10,22 @@
           <%= flash[:alert] %>
         </div>
         <div class="field">
-          <%= f.label :email, "メールアドレス" %><br />
-          <%= f.email_field :email, id:"customer_login_email", autofocus: true, autocomplete: "email" %>
+          <%= f.label :email, "メールアドレス" %>
+          <%= f.email_field :email, class: "form__field", id:"customer_login_email", autofocus: true, autocomplete: "email" %>
+          <span class="indispensable">必須</span>
         </div>
 
         <div class="field">
-          <%= f.label :password, "パスワード（6文字以上）" %><br />
-          <%= f.password_field :password, id:"customer_login_password", autocomplete: "new-password" %>
+          <%= f.label :password, "パスワード（6文字以上）" %>
+          <%= f.password_field :password, class: "form__field", id:"customer_login_password", autocomplete: "new-password" %>
+          <span class="indispensable">必須</span>
         </div>
 
         <div class="actions">
           <%= f.submit "ログイン", class: :form__btn  %>
         </div>
       <% end %>
-      <%= link_to '戻る', root_path %>
+      <%= link_to '戻る', root_path, class: "link__btn" %>
     </div>
   </div>
 </div>

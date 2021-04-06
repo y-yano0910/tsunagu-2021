@@ -37,6 +37,14 @@
             <%= "「#{@product.features}」" %>
           </p>
         </div>
+        <% if customer_signed_in? %>
+          <div class="product__detail">
+            <p class="detail__title">生産者の名前(農園名)</p>
+            <p class="detail__message">
+              <%= link_to "#{@product.producer.farm_name}", producer_path(@product.producer_id), class: :"link__btn" %>
+            </p>
+          </div>
+        <% end %>
       </div>
     </div>
   </div>

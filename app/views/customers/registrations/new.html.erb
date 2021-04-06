@@ -7,64 +7,75 @@
       <%= form_with model: @customer, url: customer_registration_path, local: true do |f| %>
       <%= render 'shared/error_messages', model: f.object %>
         <div class="field">
-          <%= f.label :email, "メールアドレス" %><br />
-          <%= f.email_field :email, id:"customer_email", autofocus: true, autocomplete: "email" %>
+          <%= f.label :email, "メールアドレス" %>
+          <%= f.email_field :email, class: "form__field", id:"customer_email", placeholder: "PC・携帯どちらでも可", autofocus: true, autocomplete: "email" %>
+          <span class="indispensable">必須</span>
         </div>
 
         <div class="field">
-          <%= f.label :password, "パスワード（6文字以上）" %><br />
-          <%= f.password_field :password, id:"customer_password", autocomplete: "new-password" %>
+          <%= f.label :password, "パスワード（6文字以上）" %>
+          <%= f.password_field :password, class: "form__field", id:"customer_password", placeholder: "6文字以上の半角英数字", autocomplete: "new-password" %>
+          <span class="indispensable">必須</span>
         </div>
 
         <div class="field">
-          <%= f.label :password_confirmation, "パスワード再入力" %><br />
-          <%= f.password_field :password_confirmation, id:"customer_password_confirmation", autocomplete: "new-password" %>
+          <%= f.label :password_confirmation, "パスワード再入力" %>
+          <%= f.password_field :password_confirmation, class: "form__field", id:"customer_password_confirmation", placeholder: "同じパスワードを入力してください", autocomplete: "new-password" %>
+          <span class="indispensable">必須</span>
         </div>
 
         <div class="field">
-          <%= f.label :company_name, "会社名" %><br />
-          <%= f.text_field :company_name, id:"customer_company_name" %>
+          <%= f.label :company_name, "会社名" %>
+          <%= f.text_field :company_name, class: "form__field", id:"customer_company_name", placeholder: "例)株式会社TSUNAGU", maxlength: "40" %>
+          <span class="indispensable">必須</span>
         </div>
 
         <div class="field">
-          <%= f.label :customer_name, "店名" %><br />
-          <%= f.text_field :customer_name, id:"customer_user_name" %>
+          <%= f.label :customer_name, "店名" %>
+          <%= f.text_field :customer_name, class: "form__field", id:"customer_user_name", placeholder: "例)レストランTSUNAGU", maxlength: "40" %>
+          <span class="indispensable">必須</span>
         </div>
 
         <div class="field">
-          <%= f.label :responsible_person, "担当者名" %><br />
-          <%= f.text_field :responsible_person, id:"customer_responsible_person" %>
+          <%= f.label :responsible_person, "担当者名" %>
+          <%= f.text_field :responsible_person, class: "form__field", id:"customer_responsible_person", placeholder: "フルネームで入力してください" %>
+          <span class="indispensable">必須</span>
         </div>
 
         <%= f.fields_for :shipping do |s| %>
           <div class="field">
-            <%= s.label :postal_code, "郵便番号" %><br />
-            <%= s.text_field :postal_code, id:"customer_postal_code" %>
+            <%= s.label :postal_code, "郵便番号" %>
+            <%= s.text_field :postal_code, class: "number__field", id:"customer_postal_code", placeholder: "例)123-4567", maxlength: "8" %>
+            <span class="indispensable">必須</span>
           </div>
 
           <div class="field">
             <%= s.label :prefecture, "都道府県" %>
             <%= s.collection_select(:prefecture_id, Prefecture.all, :id, :name, {}, {class:"select-box"}) %>
+            <span class="indispensable">必須</span>
           </div>
 
           <div class="field">
-            <%= s.label :municipality, "市区町村" %><br />
-            <%= s.text_field :municipality, id:"customer_municipality" %>
+            <%= s.label :municipality, "市区町村" %>
+            <%= s.text_field :municipality, class: "form__field", id:"customer_municipality", placeholder: "例)東京都渋谷区" %>
+            <span class="indispensable">必須</span>
           </div>
 
           <div class="field">
-            <%= s.label :house_number, "町名・番地" %><br />
-            <%= s.text_field :house_number, id:"customer_houce_number" %>
+            <%= s.label :house_number, "町名・番地" %>
+            <%= s.text_field :house_number, class: "form__field", id:"customer_houce_number", placeholder: "例)渋谷町1-1-1" %>
+            <span class="indispensable">必須</span>
           </div>
 
           <div class="field">
-            <%= s.label :building_name, "建物名" %><br />
-            <%= s.text_field :building_name, id:"customer_building_name" %>
+            <%= s.label :building_name, "建物名" %>
+            <%= s.text_field :building_name, class: "form__field", id:"customer_building_name", placeholder: "例)渋谷ビル101" %>
           </div>
 
           <div class="field">
-            <%= s.label :phone_number, "電話番号" %><br />
-            <%= s.text_field :phone_number, id:"customer_phone_number" %>
+            <%= s.label :phone_number, "電話番号" %>
+            <%= s.text_field :phone_number, class: "number__field", id:"customer_phone_number", placeholder: "例)09012345678", maxlength: "11" %>
+            <span class="indispensable">必須</span>
           </div>
         <% end %>
 
@@ -72,7 +83,7 @@
           <%= f.submit "新規登録", class: :form__btn  %>
         </div>
       <% end %>
-      <%= link_to '戻る', root_path %>
+      <%= link_to '戻る', root_path, class: :link__btn %>
     </div>
   </div>
 </div>

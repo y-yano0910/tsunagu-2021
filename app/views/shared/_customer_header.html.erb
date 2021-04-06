@@ -5,7 +5,9 @@
         <%= link_to "TSUNAGU", products_path, class: :logo %>
       </div>
       <div class="nav__right">
-        <p><b><%= current_customer.customer_name %></b>さんのページ</p>
+        <em class="current__name">ようこそ！<br/>
+          <b><%= current_customer.customer_name %></b>さん
+        </em>
         <div class="btn__pro">
           <%=link_to "商品一覧", products_path, class: :nav__btn %>
         </div>

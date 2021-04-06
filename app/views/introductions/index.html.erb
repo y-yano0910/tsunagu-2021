@@ -1,41 +1,50 @@
 <%= render "shared/header" %>
-<div class="contents">
-  <section class="upper-section">
-    <div class="intoroductions">
-      <ul class="intoroduction">
-        <li>こだわりの食材を求める買い手のニーズ</li>
-        <li>丹精込めた生産品を知って欲しい生産者</li>
-        <li>そんな生産者と買い手のニーズを繋ぐプラットフォームです</li>
-      </ul>
-      <div class="inners">
-        <h1 class="log-name">LOG IN</h1>
-        <h3 class="log-name">ログイン</h3>
-      </div>
+<div class="main">
+  <section class="first-section">
+    <%= image_tag "beetroot-687251_640.jpg", class: "top__image" %>
+    <%= image_tag "carrots-673184_640.jpg", class: "top__image" %>
+    <%= image_tag "salad-2756467_640.jpg", class: "top__image" %>
+    <%= image_tag "tomatoes-1561565_640.jpg", class: "top__image" %>
+    <%= image_tag "pizza-346985_640.jpg", class: "top__image" %>
+    <%= image_tag "vegetables-landscape-2943500_640.jpg", class: "top__image" %>
+    <%= image_tag "casserole-dish-2776735_640.jpg", class: "top__image" %>
+    <%= image_tag "meal-1307604_640.jpg", class: "top__image" %>
+    <%= image_tag "onions-1397037_640.jpg", class: "top__image" %>
+  </section>
+  <section class="second-section">
+    <div class="introduction">
+      <br/>
+      <h1 class="intro_title">TSUNAGUとは？</h1>
+      <em>こだわりの食材、多様な食材を探している人たちのニーズ</em><br/>
+      <em>丹生込めて作りあげた生産品を新しい顧客にもっともっと知って欲しい生産者</em><br/>
+      <em>そんな生産者と買い手の想いを直接<b>“繋げる”</b>プラットフォームが<b>“TSUNAGU”</b>です！</em><br/>
+      <br/>
+      <em>生産者の方は、商品の登録・販売をしていただけます。</em><br/>
+      <em>購入者の方は、登録された商品の中から気に入った商品をご購入いただけます。</em><br/>
     </div>
   </section>
-  <section class="login-section">
-    <div class="inners">
-      <ul class="login-switch">
-        <li class="producers">
-          <% if producer_signed_in? %>
-            <%= link_to image_tag("producer_icon.png", class: :icon), new_producer_session_path %>
-            <h4 class="login_guide"><%= current_producer.farm_name %>さんのページはこちら</h4>
-          <% else %>
-            <%= link_to image_tag("producer_icon.png", class: :icon), new_producer_registration_path %>
-            <h4 class="login_guide">生産者の新規登録はこちら</h4>
-          <% end %>
-        </li>
-        <li class="customers">
-          <% if customer_signed_in? %>
-            <%= link_to image_tag("customer_icon.png", class: :icon), new_customer_session_path %>
-            <h4 class="login_guide"><%= current_customer.customer_name %>さんのページはこちら</h4>
-          <% else %>
-            <%= link_to image_tag("customer_icon.png", class: :icon), new_customer_registration_path %>
-            <h4 class="login_guide">購入者の新規登録はこちら</h4>
-          <% end %>
-        </li>
-      </ul>
-    </div>
+  <section class="third-section">
+    <nav class="select_login">
+      <div class="producers_icon">
+         <%= link_to image_tag("producer_icon.png", class: "login_icon"), new_producer_session_path %>
+         <p>生産者の新規登録はこちら</p>
+      </div>
+      <div class="customers_icon">
+        <%= link_to image_tag("customer_icon.png", class: "login_icon"), new_customer_session_path %>
+        <p>購入者の新規登録はこちら</p>
+      </div>
+    </nav>
+  </section>
+  <section class="fourth-section">
+    <%= image_tag "sweet-corn-3705687_640.jpg", class: "top__image" %>
+    <%= image_tag "salmon-518032_640.jpg", class: "top__image" %>
+    <%= image_tag "peas-1205673_640.jpg", class: "top__image" %>
+    <%= image_tag "vegetable-skewer-3317060_640.jpg", class: "top__image" %>
+    <%= image_tag "berries-2277_640.jpg", class: "top__image" %>
+    <%= image_tag "romanesco-3493007_640.jpg", class: "top__image" %>
+    <%= image_tag "top-view-1248955_640.jpg", class: "top__image" %>
+    <%= image_tag "avocado-2115922_640.jpg", class: "top__image" %>
+    <%= image_tag "carrots-1508847_640.jpg", class: "top__image" %>
   </section>
 </div>
 <%= render "shared/footer" %>

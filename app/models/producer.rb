@@ -20,6 +20,9 @@ class Producer < ApplicationRecord
     validates :farm_characteristic
   end
 
+  PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i.freeze
+  validates_format_of :password, with: PASSWORD_REGEX, message: '半角英字と半角数字の両方を含めて設定してください'
+
   with_options numericality: { other_than: 0, message: 'を選択してください' } do
     validates :category_id
     validates :main_product_id
