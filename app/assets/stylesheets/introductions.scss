@@ -3,85 +3,100 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 /* introductionページ */
-
-.contents{
-  height: calc(100vh - 150px);
-  // background-color: cyan;
+.first-section{
+  background-color: black;
+  height: 100px;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+  justify-content: space-evenly;
 }
-.upper-section{
-  // background-color: bisque;
-  height: 200px;
-  width: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.intoroduction{
-  font-size: 20px;
-  text-align: center;
-  list-style: none;
-}
-
-.log-name{
-  color: black;
-  // font-size: 30px;
-  text-align: center;
-}
-.login-section{
-  // background-color: darkorange;
-  height: 300px;
-  width: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.inners{
-  // background-color: darkgoldenrod;
-}
-.login-switch{
-  // background-color: cadetblue;
-  width: 50vw;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.producers{
+.top__image{
+  height: 100px;
   width: auto;
-  background-color: rgb(241, 243, 108);
-  border: 1px black solid;
-  padding: 40px 20px 20px;
-  list-style: none;
+  border: 3px black solid;
 }
-
-.producers:hover{
-  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2), 0 1px 8px 0 rgba(0, 0, 0, 0.12);
-  cursor: pointer;
+.second-section{
+  height: 250px;
+  margin: 0 160px;
 }
-
-.customers{
-  // width: auto;
-  background-color: rgb(243, 148, 119);
-  border: 1px black solid;
-  padding: 40px 20px 20px;
-  list-style: none;
-}
-
-.customers:hover{
-  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2), 0 1px 8px 0 rgba(0, 0, 0, 0.12);
-  cursor: pointer;
-}
-
-.icon{
-  padding-left: 30px;
-  padding-bottom: 10px;
-}
-
-.login_guide{
-  width: 200px;
-  height: 40px;
+.introduction{
   text-align: center;
+  em{
+    font-family: monospace;
+    font-size: 16px;
+  }
+}
+.intro_title{
+  font-size: 30px;
+}
+.third-section{
+  height: 250px;
+  margin: 0 160px;
+}
+.select_login{
+  display: flex;
+  justify-content: space-around;
+}
+.producers_icon{
+  position: relative;
+  background-color: rgb(114, 231, 240);
+  padding: 40px 20px 20px;
+  border: 1px rgb(114, 231, 240) solid;
+  box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.2), 0 1px 8px 0 rgba(0, 0, 0, 0.12);
+  transition: 0.4s ease;
+  p{
+    position: absolute;
+    color: rgb(49, 122, 231);
+    font-family: monospace;
+    font-size: 1.3em;
+    top: 20px;
+    text-shadow: 0px 0px 1px rgb(117, 112, 112);
+  }
+}
+.producers_icon:hover{
+  background-color: rgb(18, 139, 238);
+  border: 1px rgb(18, 139, 238) solid;
+  box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.2), 0 3px 12px 0 rgba(0, 0, 0, 0.12);
+  cursor: pointer;
+  p{
+    text-shadow: 0px 0px 5px rgb(117, 112, 112);
+    color: whitesmoke;
+    transition: 0.4s ease;
+  }
+}
+.customers_icon{
+  position: relative;
+  background-color: rgb(243, 148, 119);
+  border: 1px rgb(243, 148, 119) solid;
+  padding: 40px 20px 20px;
+  box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.2), 0 1px 8px 0 rgba(0, 0, 0, 0.12);
+  transition: 0.4s ease;
+  p{
+    position: absolute;
+    color: rgb(219, 86, 45);
+    font-family: monospace;
+    font-size: 1.3em;
+    top: 20px;
+    text-shadow: 0px 0px 1px rgb(117, 112, 112);
+  }
+}
+.customers_icon:hover{
+  background-color: rgb(240, 98, 16);
+  border: 1px rgb(240, 98, 16) solid;
+  box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.2), 0 3px 12px 0 rgba(0, 0, 0, 0.12);
+  cursor: pointer;
+  p{
+    text-shadow: 0px 0px 5px rgb(117, 112, 112);
+    color: whitesmoke;
+    transition: 0.4s ease;
+  }
+}
+.login_icon{
+  width: 100%;
+  padding: 20px 30px;
+}
+.fourth-section{
+  background-color: black;
+  height: 100px;
+  display: flex;
+  justify-content: space-evenly;
 }

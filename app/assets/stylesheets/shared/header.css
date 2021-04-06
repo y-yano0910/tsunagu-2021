@@ -1,6 +1,6 @@
 .header {
   height: 100px;
-  background-color: rgb(56, 218, 105);
+  background-color: rgb(63, 238, 115);
   padding: 20px 0;
 
 }
@@ -20,32 +20,36 @@
 }
 .logo:hover{
   cursor: pointer;
-  color: #615e5e;
+  color: rgb(136, 207, 163);
+  text-shadow:1px 0 5px #022941;
+  transition: 0.4s ease;
 }
 .nav__right{
   display: flex;
   justify-content: center;
   align-items: center;
 }
-
+.current__name{
+  margin-right: 30px;
+}
 .btn__pro{
-  padding: 0 20px;
+  margin: 0 20px;
 }
 
 .nav__btn{
   display: inline-block;
   padding: 0.4em 1.6em;
   font-size: 0.8em;
-  color: white;
+  color: rgb(230, 248, 227);
   text-decoration: none;
   user-select: none;
-  border: 1px #022941 solid;
-  background-color: black;
+  border: 1px rgb(5, 175, 130) solid;
+  background-color: rgb(5, 175, 130);
   border-radius: 3px;
   transition: 0.4s ease;
 }
 .nav__btn:hover{
   box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2), 0 1px 8px 0 rgba(0, 0, 0, 0.12);
   cursor: pointer;
-  background-color: #033303;
+  background-color: rgb(1, 27, 21);
 }

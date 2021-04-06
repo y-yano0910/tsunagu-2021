@@ -4,13 +4,29 @@
 
 .form__text {
   width: 50%;
+  height: 7em;
+  line-height: 1.5em;
+}
+.form__field{
+  width: 50%;
+  height: 3em;
+}
+.number__field{
+  width: 25%;
+  height: 3em;
+}
+.image__field{
+  width: 27%;
+  cursor: pointer;
 }
 
 .field{
-  margin: 10px 0;
+  margin: 15px 0;
 }
 .select-box{
   padding: 10px 20px;
+  width: 25%;
+  cursor: pointer;
 }
 
 .actions{
@@ -19,13 +35,14 @@
 
 .form__btn{
   display: inline-block;
+  margin-top: 10px;
   padding: 0.4em 1.6em;
   font-size: 0.8em;
-  color: #fff;
+  color: rgb(230, 248, 227);
   text-decoration: none;
   user-select: none;
-  background: black;
-  border: 1px #87faa9 solid;
+  background-color:  rgb(1, 27, 21);
+  border: 1px rgb(1, 27, 21) solid;
   border-radius: 3px;
   box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.14), 0 1px 2px 0 rgba(0, 0, 0, 0.12);
   transition: 0.2s ease;
@@ -34,14 +51,17 @@
 .form__btn:hover {
   box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2), 0 1px 8px 0 rgba(0, 0, 0, 0.12);
   cursor: pointer;
-  background-color: #033303;
+  background-color:  rgb(5, 175, 130);
+  border: 1px rgb(5, 175, 130) solid;
 }
 
 label {
   display: block;
+
 }
 .search__wrapper{
 }
 .search_field{
   margin: 10px 0;
+
 }

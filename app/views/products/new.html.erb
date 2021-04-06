@@ -8,20 +8,20 @@
         <%= render 'shared/error_messages', model: f.object %>
 
         <div class="field">
-          <%= f.label :name, "商品(生産品)の名前" %><br />
-          <%= f.text_field :name, id:"product_name", placeholder: "例)トマト" %>
+          <%= f.label :name, "商品(生産品)の名前" %>
+          <%= f.text_field :name, class: "form__field", id:"product_name", placeholder: "例)トマト", maxlength: "40" %>
           <span class="indispensable">必須</span>
         </div>
 
         <div class="field">
-          <%= f.label :image, "商品(生産品)の画像" %><br />
-          <%= f.file_field :image, id:"product_image" %>
+          <%= f.label :image, "商品(生産品)の画像" %>
+          <%= f.file_field :image, class: "image__field", id:"product_image" %>
           <span class="indispensable">必須</span>
         </div>
 
         <div class="field">
-          <%= f.label :price, "価格設定" %><br />
-          <%= f.number_field :price, id:"product_price", placeholder:"例) 300" %>
+          <%= f.label :price, "価格設定" %>
+          <%= f.number_field :price, class: "number__field", id:"product_price", placeholder:"例) 10 〜 999,999 まで" %>円
           <span class="indispensable">必須</span>
         </div>
 
@@ -38,7 +38,7 @@
         </div>
 
         <div class="field">
-          <%= f.label :features, "商品(生産品)のご紹介文" %><br />
+          <%= f.label :features, "商品(生産品)のご紹介文" %>
           <%= f.text_area :features, class: :form__text, id:"product_features", placeholder: "例) トマトの甘みとコクを最大限に引き出すために、トマトの生育に最適な環境を作って育てました！濃厚な味わいです！" %>
           <span class="indispensable">必須</span>
         </div>
