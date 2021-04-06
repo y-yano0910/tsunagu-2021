@@ -5,10 +5,10 @@
       <%= "登録商品(生産品)の一覧" %>
     </h2>
     <div class="search__wrapper">
-      <%= search_form_for @p, url: products_search_path do |f| %>
+      <%= search_form_for @p, url: search_products_path do |f| %>
         <div class="search_field">
-          <%= f.label :name_cont, 'キーワードから探す' %>
-          <%= f.search_field :name_cont %>
+          <%= f.label :name_or_features_or_producer_farm_name_cont, 'キーワードから探す' %>
+          <%= f.search_field :name_or_features_or_producer_farm_name_cont, placeholder: "例)農園名、商品名など" %>
         </div>
         <div class="search_field">
           <%= f.label :name_eq, '登録商品名(生産品名)' %>
@@ -20,14 +20,8 @@
         </div>
         <div class="search_field">
           <%= f.label :price, '価格' %>
-          <%= f.radio_button :price_lteq, '' %>
-          指定なし
-          <%= f.radio_button :price_lteq, '1000' %>
-          1000円以下
-          <%= f.radio_button :price_lteq, '2500' %>
-          2500円以下
-          <%= f.radio_button :price_lteq, '5000' %>
-          5000円以下
+          <%= f.number_field :price_gteq, placeholder: "例)100" %>円 以上 〜
+          <%= f.number_field :price_lteq, placeholder: "例)1000" %>円 以下
         </div>
         <div class="actions">
           <%= f.submit '検索', class: :form__btn %>

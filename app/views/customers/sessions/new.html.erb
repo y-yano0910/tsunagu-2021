@@ -12,11 +12,13 @@
         <div class="field">
           <%= f.label :email, "メールアドレス" %><br />
           <%= f.email_field :email, id:"customer_login_email", autofocus: true, autocomplete: "email" %>
+          <span class="indispensable">必須</span>
         </div>
 
         <div class="field">
           <%= f.label :password, "パスワード（6文字以上）" %><br />
           <%= f.password_field :password, id:"customer_login_password", autocomplete: "new-password" %>
+          <span class="indispensable">必須</span>
         </div>
 
         <div class="actions">

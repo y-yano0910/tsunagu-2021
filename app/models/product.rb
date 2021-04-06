@@ -15,6 +15,11 @@ class Product < ApplicationRecord
     validates :features
   end
 
+  validates_format_of :price, with: /\A[0-9]+\z/, message: '半角数値で入力してください'
+  validates_numericality_of :price, only_integer: true, greater_than_or_equal_to: 10, less_than_or_equal_to: 999_999,
+                                    message: '決められた数値の範囲内で入力してください'
+
+
   with_options numericality: { other_than: 0, message: 'を選択してください' } do
     validates :capacity_id
     validates :main_product_id
