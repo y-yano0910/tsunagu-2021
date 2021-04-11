@@ -59,9 +59,20 @@ label {
   display: block;
 
 }
-.search__wrapper{
-}
+
 .search_field{
   margin: 10px 0;
-
+}
+.keyword__field{
+  width: 22%;
+  height: 2.5em;
+}
+.keyword__number{
+  width: 15%;
+  height: 2.5em;
+}
+.search__box{
+  width: 15%;
+  height: 2.5em;
+  cursor: pointer;
 }
