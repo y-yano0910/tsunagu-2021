@@ -28,7 +28,7 @@
       <div class="producers_icon">
         <% if producer_signed_in? %>
           <%= link_to image_tag("producer_icon.png", class: "login_icon"), new_producer_session_path %>
-          <p><%= current_producer.farm_name %>さんのページはこちら</p>
+          <p>ログインはこちら<br/><%= current_producer.farm_name %>さん</p>
         <% else %>
           <%= link_to image_tag("producer_icon.png", class: "login_icon"), new_producer_registration_path %>
           <p>生産者の新規登録はこちら</p>
@@ -37,7 +37,7 @@
       <div class="customers_icon">
         <% if customer_signed_in? %>
           <%= link_to image_tag("customer_icon.png", class: "login_icon"), new_customer_session_path %>
-          <p><%= current_customer.customer_name %>さんのページはこちら</p>
+          <p>ログインはこちら<br/><%= current_customer.customer_name %>さん</p>
         <% else %>
           <%= link_to image_tag("customer_icon.png", class: "login_icon"), new_customer_registration_path %>
           <p>購入者の新規登録はこちら</p>

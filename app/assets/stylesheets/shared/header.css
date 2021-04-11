@@ -1,11 +1,11 @@
 .header {
   height: 100px;
-  background-color: rgb(63, 238, 115);
+  /* background-color: rgb(63, 238, 115); */
   padding: 20px 0;
 
 }
 .inner {
-  width: 1024px;
+  /* width: 1024px; */
   margin: 0 auto;
 }
 .nav {
@@ -22,7 +22,7 @@
   cursor: pointer;
   color: rgb(136, 207, 163);
   text-shadow:1px 0 5px #022941;
-  transition: 0.4s ease;
+  transition: 0.2s ease;
 }
 .nav__right{
   display: flex;
@@ -44,13 +44,14 @@
   color: rgb(230, 248, 227);
   text-decoration: none;
   user-select: none;
-  border: 1px rgb(5, 175, 130) solid;
-  background-color: rgb(5, 175, 130);
+  border: 1px rgb(1, 27, 21) solid;
+  background-color: rgb(1, 27, 21);
   border-radius: 3px;
-  transition: 0.4s ease;
+  transition: 0.2s ease;
 }
 .nav__btn:hover{
   box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2), 0 1px 8px 0 rgba(0, 0, 0, 0.12);
   cursor: pointer;
-  background-color: rgb(1, 27, 21);
+  background-color: rgb(5, 175, 130);
+  border: 1px rgb(5, 175, 130) solid;
 }

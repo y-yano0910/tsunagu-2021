@@ -7,19 +7,21 @@
       <div class="nav__right">
         <div class="btn__pro">
           <% if producer_signed_in? %>
-            <p><b><%= current_producer.farm_name %></b>さん</p>
+            <em><b><%= current_producer.farm_name %></b>さん</em><br/>
+            <%= link_to "ログアウト", destroy_producer_session_path, method: :delete, class: :nav__btn %>
           <% else %>
-            <p><b>生産者</b>の</p>
+            <em><b>生産者</b>の</em><br/>
+            <%= link_to "ログイン", new_producer_session_path, class: :nav__btn %>
           <% end %>
-          <%= link_to "ログイン", new_producer_session_path, class: :nav__btn %>
         </div>
         <div class="btn__pro">
           <% if customer_signed_in? %>
-            <p><b><%= current_customer.customer_name %></b>さん</p>
+            <em><b><%= current_customer.customer_name %></b>さん</em><br/>
+            <%= link_to "ログアウト", destroy_customer_session_path, method: :delete, class: :nav__btn %>
           <% else %>
-            <p><b>購入者</b>の</p>
+            <em><b>購入者</b>の</em><br/>
+            <%= link_to "ログイン", new_customer_session_path, class: :nav__btn %>
           <% end %>
-          <%= link_to "ログイン", new_customer_session_path, class: :nav__btn %>
         </div>
       </div>
     </div>
